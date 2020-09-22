@@ -21,7 +21,7 @@ public class GildedRoseTest {
             new Item("Conjured Mana Cake", 3, 6)};
 
     Item[] legacyItems = Arrays.stream(items)
-            .map(item -> new Item(item.name, item.sellIn, item.quality))
+            .map(item -> new Item(item.name, item.sellIn, item.getQuality()))
             .toArray(Item[]::new);
 
 
@@ -40,7 +40,7 @@ public class GildedRoseTest {
             assertThat(inn.items).extracting("name").containsExactly(
                     Arrays.stream(legacyInn.items).map(item -> item.name).toArray());
             assertThat(inn.items).extracting("quality").containsExactly(
-                    Arrays.stream(legacyInn.items).map(item -> item.quality).toArray());
+                    Arrays.stream(legacyInn.items).map(item -> item.getQuality()).toArray());
             assertThat(inn.items).extracting("sellIn").containsExactly(
                     Arrays.stream(legacyInn.items).map(item -> item.sellIn).toArray());
         }
