@@ -4,19 +4,19 @@ public class Item {
 
     public String name;
 
-    public int sellIn;
+    private int sellIn;
 
     private int quality;
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
-        this.sellIn = sellIn;
+        this.setSellIn(sellIn);
         this.quality = quality;
     }
 
    @Override
    public String toString() {
-        return this.name + ", " + this.sellIn + ", " + this.getQuality();
+        return this.name + ", " + this.getSellIn() + ", " + this.getQuality();
     }
 
     public int getQuality() {
@@ -33,5 +33,18 @@ public class Item {
 
     public void resetQuality() {
         quality = 0;
+    }
+
+    public int getSellIn() {
+        return sellIn;
+    }
+
+    @Deprecated()
+    public void setSellIn(int sellIn) {
+        decreaseSellIn();
+    }
+
+    public void decreaseSellIn() {
+        this.sellIn -= 1;
     }
 }

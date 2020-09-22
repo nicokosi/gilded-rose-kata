@@ -21,13 +21,13 @@ class LegacyGildedRose {
                     item.increaseQuality();
 
                     if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (item.sellIn < 11) {
+                        if (item.getSellIn() < 11) {
                             if (item.getQuality() < 50) {
                                 item.increaseQuality();
                             }
                         }
 
-                        if (item.sellIn < 6) {
+                        if (item.getSellIn() < 6) {
                             if (item.getQuality() < 50) {
                                 item.increaseQuality();
                             }
@@ -37,10 +37,10 @@ class LegacyGildedRose {
             }
 
             if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                item.sellIn = item.sellIn - 1;
+                item.setSellIn(item.getSellIn() - 1);
             }
 
-            if (item.sellIn < 0) {
+            if (item.getSellIn() < 0) {
                 if (!item.name.equals("Aged Brie")) {
                     if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (item.getQuality() > 0) {
