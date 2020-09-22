@@ -39,10 +39,8 @@ class GildedRose {
                     } else {
                         item.resetQuality();
                     }
-                } else {
-                    if (item.getQuality() < 50) {
+                } else if (item.getQuality() < 50) {
                         item.increaseQuality();
-                    }
                 }
             }
         }
