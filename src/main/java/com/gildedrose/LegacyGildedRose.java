@@ -13,23 +13,23 @@ class LegacyGildedRose {
                     && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (item.getQuality() > 0) {
                     if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                        item.setQuality(item.getQuality() - 1);
+                        item.decreaseQuality();
                     }
                 }
             } else {
                 if (item.getQuality() < 50) {
-                    item.setQuality(item.getQuality() + 1);
+                    item.increaseQuality();
 
                     if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (item.sellIn < 11) {
                             if (item.getQuality() < 50) {
-                                item.setQuality(item.getQuality() + 1);
+                                item.increaseQuality();
                             }
                         }
 
                         if (item.sellIn < 6) {
                             if (item.getQuality() < 50) {
-                                item.setQuality(item.getQuality() + 1);
+                                item.increaseQuality();
                             }
                         }
                     }
@@ -45,15 +45,15 @@ class LegacyGildedRose {
                     if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (item.getQuality() > 0) {
                             if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                                item.setQuality(item.getQuality() - 1);
+                                item.decreaseQuality();
                             }
                         }
                     } else {
-                        item.setQuality(0);
+                        item.resetQuality();
                     }
                 } else {
                     if (item.getQuality() < 50) {
-                        item.setQuality(item.getQuality() + 1);
+                        item.increaseQuality();
                     }
                 }
             }

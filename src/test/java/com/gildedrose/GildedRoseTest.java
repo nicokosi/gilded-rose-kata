@@ -40,7 +40,7 @@ public class GildedRoseTest {
             assertThat(inn.items).extracting("name").containsExactly(
                     Arrays.stream(legacyInn.items).map(item -> item.name).toArray());
             assertThat(inn.items).extracting("quality").containsExactly(
-                    Arrays.stream(legacyInn.items).map(item -> item.getQuality()).toArray());
+                    Arrays.stream(legacyInn.items).map(Item::getQuality).toArray());
             assertThat(inn.items).extracting("sellIn").containsExactly(
                     Arrays.stream(legacyInn.items).map(item -> item.sellIn).toArray());
         }

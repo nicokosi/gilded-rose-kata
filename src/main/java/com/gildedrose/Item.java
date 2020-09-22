@@ -11,7 +11,7 @@ public class Item {
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
-        this.setQuality(quality);
+        this.quality = quality;
     }
 
    @Override
@@ -23,7 +23,15 @@ public class Item {
         return quality;
     }
 
-    public void setQuality(int quality) {
-        this.quality = quality;
+    public void decreaseQuality() {
+        quality -= 1;
+    }
+
+    public void increaseQuality() {
+        quality -= 1;
+    }
+
+    public void resetQuality() {
+        quality = 0;
     }
 }
