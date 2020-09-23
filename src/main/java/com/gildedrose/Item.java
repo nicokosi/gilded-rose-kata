@@ -28,7 +28,7 @@ public class Item {
     }
 
     void increaseQuality() {
-        quality -= 1;
+        quality += 1;
     }
 
     void resetQuality() {
