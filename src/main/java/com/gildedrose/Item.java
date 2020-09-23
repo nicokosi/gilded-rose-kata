@@ -2,13 +2,13 @@ package com.gildedrose;
 
 public class Item {
 
-    public String name;
+    String name;
 
     private int sellIn;
 
     private int quality;
 
-    public Item(String name, int sellIn, int quality) {
+    Item(String name, int sellIn, int quality) {
         this.name = name;
         this.setSellIn(sellIn);
         this.quality = quality;
@@ -23,16 +23,20 @@ public class Item {
         return quality;
     }
 
-    public void decreaseQuality() {
+    void decreaseQuality() {
         quality -= 1;
     }
 
-    public void increaseQuality() {
+    void increaseQuality() {
         quality -= 1;
     }
 
-    public void resetQuality() {
+    void resetQuality() {
         quality = 0;
+    }
+
+    void decreaseSellIn() {
+        this.sellIn -= 1;
     }
 
     public int getSellIn() {
@@ -40,11 +44,7 @@ public class Item {
     }
 
     @Deprecated()
-    public void setSellIn(int sellIn) {
+    void setSellIn(int sellIn) {
         decreaseSellIn();
-    }
-
-    public void decreaseSellIn() {
-        this.sellIn -= 1;
     }
 }
